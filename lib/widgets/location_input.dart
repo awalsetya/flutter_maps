@@ -78,7 +78,7 @@ class _LocationInputState extends State<LocationInput> {
           children: <Widget>[
             FlatButton.icon(
               icon: Icon(Icons.location_on),
-              label: Text('Current Location'),
+              label: Text('Lokasi saat ini'),
               textColor: Theme.of(context).primaryColor,
               onPressed: _getCurrentUserLocation,
             ),
@@ -86,7 +86,7 @@ class _LocationInputState extends State<LocationInput> {
               icon: Icon(
                 Icons.map,
               ),
-              label: Text('Select on Map'),
+              label: Text('Pilih di maps'),
               textColor: Theme.of(context).primaryColor,
               onPressed: _selecOnMap,
             )

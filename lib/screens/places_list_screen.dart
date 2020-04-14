@@ -10,7 +10,7 @@ class PlacesListScreen extends StatelessWidget {
     var greatPlace = Provider.of<GreatPlaces>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Your Places'),
+        title: Text('Daftar Lokasi'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.add),
@@ -29,7 +29,7 @@ class PlacesListScreen extends StatelessWidget {
               )
             : Consumer<GreatPlaces>(
                 child: Center(
-                  child: const Text('Go no places yet, start adding some!'),
+                  child: const Text('info lokasi belum tersedia'),
                 ),
                 builder: (ctx, greatPlaces, ch) => greatPlaces.items.length <= 0
                     ? ch
@@ -38,25 +38,44 @@ class PlacesListScreen extends StatelessWidget {
                         itemBuilder: (ctx, i) => Card(
                           elevation: 10,
                           margin: EdgeInsets.fromLTRB(15, 10, 15, 10),
-                          child: ListTile(
-                            leading: CircleAvatar(
-                              backgroundImage: FileImage(
-                                greatPlaces.items[i].image,
+                          child: Column(
+                            children: <Widget>[
+                              ListTile(
+                                leading: CircleAvatar(
+                                  backgroundImage: FileImage(
+                                    greatPlaces.items[i].image,
+                                  ),
+                                ),
+                                title: greatPlaces.items[i].title == null
+                                    ? Text("No title")
+                                    : Text(greatPlaces.items[i].title),
+                                subtitle: greatPlaces
+                                            .items[i].location.address ==
+                                        null
+                                    ? Text("No address")
+                                    : Text(
+                                        greatPlace.items[i].location.address),
+                                // onTap: () {
+                                //   // go to de detail page
+                                //   Navigator.of(context).pushNamed(
+                                //       PlaceDetailScreen.routeName,
+                                //       arguments: greatPlace.items[i].id);
+                                // },
                               ),
-                            ),
-                            title: greatPlaces.items[i].title == null
-                                ? Text("No title")
-                                : Text(greatPlaces.items[i].title),
-                            subtitle: greatPlaces.items[i].location.address ==
-                                    null
-                                ? Text("No address")
-                                : Text(greatPlace.items[i].location.address),
-                            onTap: () {
-                              // go to de detail page
-                              Navigator.of(context).pushNamed(
-                                  PlaceDetailScreen.routeName,
-                                  arguments: greatPlace.items[i].id);
-                            },
+                              
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: <Widget>[
+                                  Container(
+                                    margin: EdgeInsets.only(right: 5),
+                                    child:  RaisedButton(onPressed: (){Navigator.of(context).pushNamed(
+                                      PlaceDetailScreen.routeName,
+                                      arguments: greatPlace.items[i].id);},child: Text('info lengkap'),),
+                                  )
+                                   
+                                ],
+                              )
+                            ],
                           ),
                         ),
                       ),
