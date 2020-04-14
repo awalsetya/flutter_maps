@@ -1,6 +1,6 @@
 # flutter_maps
 
-![](sc.gif)
+![Alt text](https://sample/url/name-of-gif-file.gif)
 
 ## Getting Started
 
