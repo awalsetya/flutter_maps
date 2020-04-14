@@ -66,7 +66,7 @@ class _LocationInputState extends State<LocationInput> {
             border: Border.all(width: 1, color: Colors.grey),
           ),
           child: _previewImageUrl == null
-              ? Text('No location chosen')
+              ? Text('lokasi belum dipilih')
               : Image.network(
                   _previewImageUrl,
                   fit: BoxFit.cover,

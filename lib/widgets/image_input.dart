@@ -50,14 +50,14 @@ class _ImageInputState extends State<ImageInput> {
                   fit: BoxFit.cover,
                   width: double.infinity,
                 )
-              : Text('No image taken', textAlign: TextAlign.center,),
+              : Text('Belum ada gambar', textAlign: TextAlign.center,),
           alignment: Alignment.center,
         ),
         SizedBox(width: 10,),
         Expanded(
           child: FlatButton.icon(
             icon: Icon(Icons.camera),
-            label: Text('Take Picture'),
+            label: Text('Ambil Photo'),
             textColor: Theme.of(context).primaryColor,
             onPressed: _takePicture,
           ),

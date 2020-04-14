@@ -71,7 +71,7 @@ class _AddPlaceScreenState extends State<AddPlaceScreen> {
           ),
           RaisedButton.icon(
             icon: Icon(Icons.add),
-            label: Text('Add Place'),
+            label: Text('Tambah'),
             onPressed: _savedPlace,
             elevation: 0,
             materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
