@@ -1,8 +1,6 @@
 # flutter_maps
 
-<video width="320" height="240" controls>
-  <source src="demo/sc1.mp4" type="video/mp4">
-</video>
+![](sc.gif)
 
 ## Getting Started
 
